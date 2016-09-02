@@ -1,0 +1,39 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Sublime Text project files
+*.sublime-project
+*.sublime-workspace
+
+# Python
+*.pyc
+*.pyo
+
+# Design files
+*.psd
+*.ai
+
+# Other
+.sass-cache
+.bundle
+bin/*
+node_modules/*
