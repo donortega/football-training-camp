@@ -1,0 +1,17 @@
+.splash {
+  width: 100vw;
+  height: 100vh;
+  background: url('/images/grass.jpg');
+}
+
+h1 {
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight: bold;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 0.20em;
+  text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+  margin-top: 0;
+  padding-top: 50px;
+}
