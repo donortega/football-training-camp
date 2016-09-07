@@ -1,3 +1,13 @@
+# Football Training Camp
+
+A collection of test and evaluations that would happen at a professional football training camp.
+
+* 40-yard dash
+* Throw a football through a tire
+* Bench press reps
+* 3-cone drill
+
+---
 This project is built on the __epsilon-base__ scaffold, which is architected to simplify the build of site templates using a componentized approach. It is intended for easier hand-off of code for implementation into a content management system like Adobe AEM or Sitecore.
 
 - [Partials and Includes](#partials-and-includes)
