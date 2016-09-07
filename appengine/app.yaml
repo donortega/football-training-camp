@@ -1,0 +1,39 @@
+application: epsilon-dev
+version: ftc
+runtime: python27
+api_version: 1
+threadsafe: true
+
+# Configuration for hosting static files only
+handlers:
+
+- url: /(.*)/
+  static_files: static/\1/index.html
+  upload: static/.*/index\.html
+
+- url: /(.+)
+  static_files: static/\1
+  upload: static/(.*)
+  # login: required
+  secure: optional
+
+- url: /
+  static_files: static/index.html
+  upload: static/index\.html
+  # login: required
+
+# Files to omit when dowloading source from AppEngine
+# Note that .yaml files are omitted. These files don't get added
+# to the server, but are used to configure the environment on deploy
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.sublime
+- ^(.*/)?.*\.scss

@@ -1,0 +1,48 @@
+// Responsive mixins for inline usage
+@mixin responsive($size) {
+	@if ($size == extrasmall) {
+		@include max-screen($break-xs) {
+			@content;
+		}
+	}
+	@else if ($size == lessthansmall) {
+		@include max-screen($break-sm - 1) {
+			@content;
+		}
+	}
+	@else if ($size == small) {
+		@include screen($break-xs, $break-sm - 1) {
+			@content;
+		}
+	}
+	@else if ($size == morethansmall) {
+		@include min-screen($break-sm) {
+			@content;
+		}
+	}
+	@else if ($size == lessthanmedium) {
+		@include max-screen($break-md - 1) {
+			@content;
+		}
+	}
+	@else if ($size == medium) {
+		@include screen($break-sm, $break-md - 1) {
+			@content;
+		}
+	}
+	@else if ($size == morethanmedium) {
+		@include min-screen($break-md) {
+			@content;
+		}
+	}
+	@else if ($size == lessthanlarge) {
+		@include max-screen($break-lg - 1) {
+			@content;
+		}
+	}
+	@else if ($size == large) {
+		@include min-screen($break-md) {
+			@content;
+		}
+	}
+}
