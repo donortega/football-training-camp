@@ -9,7 +9,8 @@
     "angular-ui-router": "^0.3.1",
     "sass-mediaqueries": "^1.6.1",
     "bootstrap-sass": "~3.3.7",
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "phaser": "^2.6.2"
   },
   "overrides": {
     "bootstrap-sass": {
