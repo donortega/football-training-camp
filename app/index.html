@@ -20,22 +20,33 @@
 
 
 <div class="splash">
-  <h1 class="text-center">FOOTBALL TRAINING CAMP</h1>
+  <header>
+    <div class="row">
+      <div class="col-xs-8">
+        <h1><a ui-sref="titlescreen">FOOTBALL TRAINING CAMP</a></h1>
+      </div>
 
-  <ul>
-    <li>
-      <a href ng-click>40-Yard Dash</a>
-    </li>
-    <li>
-      <a href ng-click>Football Throw</a>
-    </li>
-    <li>
-      <a href ng-click>Bench Press</a>
-    </li>
-    <li>
-      <a href ng-click>3-Cone Drill</a>
-    </li>
-  </ul>
+      <div class="col-xs-3 text-right">
+        <div class="btn-group text-left" uib-dropdown is-open="status.isopen">
+          <button id="single-button" type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+            Menu <span class="glyphicon glyphicon-hamburger"></span>
+          </button>
+          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+            <li role="menuitem"><a ui-sref="40yarddash">40-Yard Dash</a></li>
+            <li role="menuitem"><a ui-sref="footballthrow">Football Throw</a></li>
+            <li role="menuitem"><a ui-sref="benchpress">Bench Press</a></li>
+            <li role="menuitem"><a ui-sref="3conedrill">3-Cone Drill</a></li>
+            <li class="divider"></li>
+            <li role="menuitem"><a ui-sref="titlescreen">Reset</a></li>
+            <li role="menuitem"><a ui-sref="about">About...</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div ui-view></div>
+
 </div>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -58,10 +69,18 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
 
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <script src="/bower_components/phaser/build/phaser.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/ftc.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/title-screen.js"></script>
+    <script src="scripts/controllers/40-yard-dash.js"></script>
+    <script src="scripts/controllers/football-throw.js"></script>
+    <script src="scripts/controllers/bench-press.js"></script>
+    <script src="scripts/controllers/3-cone-drill.js"></script>
+    <script src="scripts/controllers/about.js"></script>
     <!-- endbuild -->
 
 </body>

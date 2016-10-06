@@ -13,5 +13,30 @@ h1 {
   text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 
   margin-top: 0;
-  padding-top: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  a {
+    &,
+    &:hover,
+    &:active,
+    &:visited,
+    &:focus {
+      color: white;
+      text-decoration: none;
+    }
+  }
+}
+
+header {
+  h1,
+  .btn-group {
+    padding-top: 20px;
+  }
+}
+
+.game-container {
+  > canvas {
+    margin: 0 auto;
+  }
 }
