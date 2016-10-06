@@ -22,7 +22,7 @@ app
 			.state('40yarddash', {
 				url: '/40yarddash',
 				templateUrl: '_templates/_states/40-yard-dash.html',
-				controller: '40YardDash as ctrl'
+				controller: '40YardDashCtrl as ctrl'
 			})
 			.state('footballthrow', {
 				url: '/footballthrow',

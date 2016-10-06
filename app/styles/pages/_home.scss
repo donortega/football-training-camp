@@ -34,3 +34,9 @@ header {
     padding-top: 20px;
   }
 }
+
+.game-container {
+  > canvas {
+    margin: 0 auto;
+  }
+}
