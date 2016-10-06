@@ -1,7 +1,9 @@
 app.controller('40YardDashCtrl', [function() {
-  var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game-40-yard-dash', { preload: preload, create: create });
+  var game = new Phaser.Game(800, 600, Phaser.AUTO, 'game-40-yard-dash', { preload: preload, create: create, update: update });
   var text = null;
   var grd;
+
+  var count = 0;
 
   function preload() {
 
@@ -25,8 +27,16 @@ app.controller('40YardDashCtrl', [function() {
 
   }
 
-  // function update() {
-  // }
+  function update() {
+    if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+      count++;
+      updateText(count);
+    }
+    if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+      count++;
+      updateText(count);
+    }
+  }
 
   function createText() {
 
@@ -53,6 +63,10 @@ app.controller('40YardDashCtrl', [function() {
       text.events.onInputOver.add(over, this);
       text.events.onInputOut.add(out, this);
 
+  }
+
+  function updateText(counter) {
+    text.setText(`40 YARD DASH\n${counter} keypresses`);
   }
 
   function out() {
