@@ -5,6 +5,11 @@ app.controller('40YardDashCtrl', [function() {
 
   var count = 0;
 
+  // left/right foot on keyboard
+  var leftFoot;
+  var rightFoot;
+  var lastFoot;
+
   function preload() {
 
     game.load.script('webfont', '//ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js', function(data) {
@@ -25,14 +30,39 @@ app.controller('40YardDashCtrl', [function() {
 
     game.stage.setBackgroundColor(0x2d2d2d);
 
+    game.input.keyboard.addCallbacks(
+      this,
+      null,
+      null,
+      function(event) {
+        console.log('qqq hello');
+      }
+    );
+
+    leftFoot = game.input.keyboard.addKey(Phaser.KeyCode.Z);
+    leftFoot.onDown.add(function() {
+      if (lastFoot !== 'left') {
+        console.log('qqq left 2');
+        lastFoot = 'left';
+      }
+    }, this);
+
+    rightFoot = game.input.keyboard.addKey(Phaser.KeyCode.QUESTION_MARK);
+    rightFoot.onDown.add(function() {
+      if (lastFoot !== 'right') {
+        console.log('qqq right 2');
+        lastFoot = 'right';
+      }
+    }, this);
+
   }
 
   function update() {
-    if (game.input.keyboard.isDown(Phaser.Keyboard.LEFT)) {
+    if (game.input.keyboard.isDown(Phaser.KeyCode.LEFT)) {
       count++;
       updateText(count);
     }
-    if (game.input.keyboard.isDown(Phaser.Keyboard.RIGHT)) {
+    if (game.input.keyboard.isDown(Phaser.KeyCode.RIGHT)) {
       count++;
       updateText(count);
     }
